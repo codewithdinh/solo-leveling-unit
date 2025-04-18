@@ -11,7 +11,8 @@ const Gallery = () => {
         const fetchUnits = async () => {
             const { data } = await supabase
                 .from('Units')
-                .select();
+                .select()
+                .order('created_at', { ascending: false }); // Sort by creation date, newest first
 
             setUnits(data);
         }
@@ -24,7 +25,7 @@ const Gallery = () => {
             {
                 units && units.length > 0 ?
                     units.map((unit, index) =>
-                        <div className="unit" key={index}>
+                        <div className="unit" key={index} id={unit.id}>
                             <h2>{unit.name}</h2>
                             <p>Race: {unit.race}</p>
                             <p>Color: {unit.color}</p>
