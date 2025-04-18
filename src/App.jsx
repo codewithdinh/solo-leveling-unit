@@ -1,23 +1,38 @@
 // import { useState } from 'react'
 import { Link, useRoutes } from 'react-router-dom'
 import CreateUnit from './pages/CreateUnit'
+import Gallery from './pages/Gallery'
+import Home from './pages/Home'
+import EditUnit from './pages/EditUnit'
 import './App.css'
 
 function App() {
   // const [count, setCount] = useState(0)
   const routes = useRoutes([
     {
+      path: "/",
+      element: <Home />
+    },
+    {
       path: "/new",
       element: <CreateUnit />
+    }
+    ,
+    {
+      path: "/gallery",
+      element: <Gallery />
+    },
+    {
+      path: "/edit/:id",
+      element: <EditUnit />
     }
   ])
   return (
     <>
       <div>
-
-        <h1>Welcome to the Solo Leveling Creator</h1>
-        <p>Here is where you can create your very own set of units before sending them to the Dungeons!</p>
+        <Link to="/"><button>Home</button></Link>
         <Link to="/new"><button>Create New Unit</button></Link>
+        <Link to="/gallery"><button>Gallery</button></Link>
       </div>
       {routes} {/* Render the routes here */}
 
