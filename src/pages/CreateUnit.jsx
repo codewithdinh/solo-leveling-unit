@@ -30,6 +30,7 @@ const CreateUnit = () => {
 
     return (
         <div>
+            <h1>Create a New Unit</h1>
             <form>
                 <label>Name</label>
                 <input type="text" id="name" name="name" onChange={handleChange} />

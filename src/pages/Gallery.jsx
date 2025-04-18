@@ -22,15 +22,19 @@ const Gallery = () => {
 
     return (
         <div className="gallery">
+            <h1>Your Units Gallery!</h1>
             {
                 units && units.length > 0 ?
                     units.map((unit, index) =>
                         <div className="unit" key={index} id={unit.id}>
-                            <h2>{unit.name}</h2>
-                            <p>Race: {unit.race}</p>
-                            <p>Color: {unit.color}</p>
-                            <Link to={`/edit/${unit.id}`}><button>Edit Unit</button></Link>
-
+                            <Link to={`/view/${unit.id}`}>
+                                <div className="viewUnit">
+                                    <h2>{unit.name}</h2>
+                                    <p><strong>Race: </strong>{unit.race}</p>
+                                    <p><strong>Color: </strong>{unit.color}</p>
+                                    <Link to={`/edit/${unit.id}`}><button>Edit Unit</button></Link>
+                                </div>
+                            </Link>
                         </div>
                     ) : <p>No units available</p>
             }

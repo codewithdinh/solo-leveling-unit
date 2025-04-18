@@ -4,6 +4,7 @@ import CreateUnit from './pages/CreateUnit'
 import Gallery from './pages/Gallery'
 import Home from './pages/Home'
 import EditUnit from './pages/EditUnit'
+import ViewUnit from './pages/ViewUnit'
 import './App.css'
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
     {
       path: "/edit/:id",
       element: <EditUnit />
+    }
+    ,
+    {
+      path: "/view/:id",
+      element: <ViewUnit />
     }
   ])
   return (

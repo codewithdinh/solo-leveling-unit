@@ -63,8 +63,7 @@ const EditUnit = () => {
 
   return (
     <div>
-        <h2>Edit Unit</h2>
-        <p>Unit ID: {id}</p>
+        <h2>Update your Unit</h2>
         <p>Name: {unit.name}</p>
         <p>Race: {unit.race}</p>
         <p>Color: {unit.color}</p>
