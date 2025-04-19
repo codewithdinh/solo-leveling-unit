@@ -52,16 +52,16 @@ const ViewUnit = () => {
         };
 
     return (
-        <div>
-            <h1>View Unit</h1>
-            <p>Unit ID: {id}</p>
-            <p>Here you can view the details of the unit.</p>
-            <p><strong>Name: </strong>{unit.name}</p>
+        <div className="unit-detail">
+            <h1>{unit.name}</h1>
             <p><strong>Race: </strong>{unit.race}</p>
             <p><strong>Color: </strong>{unit.color}</p>
-            <br />
-            <p>{getRaceDescription(unit.race)}</p>
-
+            
+            <div className="description-box">
+                <p>{getRaceDescription(unit.race)}</p>
+            </div>
+            
+            <button onClick={() => window.location = "/edit/" + id}>Edit Unit</button>
         </div>
     );
 }

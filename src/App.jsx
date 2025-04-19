@@ -35,7 +35,7 @@ function App() {
   ])
   return (
     <>
-      <div>
+      <div className="nav-buttons">
         <Link to="/"><button>Home</button></Link>
         <Link to="/new"><button>Create New Unit</button></Link>
         <Link to="/gallery"><button>Gallery</button></Link>
